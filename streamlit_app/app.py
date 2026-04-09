@@ -98,28 +98,35 @@ with st.expander("📊 Portfolio View — Risk & Intervention Economics"):
     st.info("Assumption: R15 intervention cost represents a 10% discount on Olist average order value of R150. 30% redemption rate based on e-commerce industry benchmark. R160 customer LTV.")
 
     st.divider()
-    st.subheader("🎯 Model Performance")
-    st.markdown("How reliable is the model powering this tool?")
+    st.subheader("🧭 Strategic Advice")
+    st.markdown("Based on the data, here is where to focus first.")
 
-    perf_col1, perf_col2, perf_col3, perf_col4 = st.columns(4)
+    st.error(
+        "🔴 **Priority 1 — Target Non-Repeatable Category customers immediately.**\n\n"
+        "14,736 customers flagged for priority intervention. These customers bought a one-off product "
+        "with no natural reason to return. A R$15 voucher toward a repeatable category "
+        "(health, beauty, pet supplies) is your highest-leverage move."
+    )
 
-    with perf_col1:
-        st.metric("Calibration", "95.0% vs 95.0%", delta="Perfect", delta_color="off")
-    with perf_col2:
-        st.metric("PR AUC (Retained Class)", "0.0393", delta="3x random baseline", delta_color="off")
-    with perf_col3:
-        st.metric("Minority Recall", "62.6%", delta="Catches 6 in 10 returnable customers", delta_color="off")
-    with perf_col4:
-        st.metric("Training Samples", "22,416", delta="80/20 stratified split", delta_color="off")
+    st.warning(
+        "🟠 **Priority 2 — Fix logistics before marketing.**\n\n"
+        "Very Late Delivery customers show the highest drop-off rate at 96.1%. "
+        "No retention voucher compensates for a bad delivery experience. "
+        "Reduce delivery delays before scaling intervention spend."
+    )
 
-    st.divider()
+    st.info(
+        "🔵 **Priority 3 — Promote installment payments at checkout.**\n\n"
+        "Installment usage is one of the strongest retention signals in the model. "
+        "Customers who pay in installments have a higher likelihood of returning. "
+        "Make installments the default payment option, not a buried alternative."
+    )
 
-    st.markdown(
-        "**What these numbers mean in business terms:**\n\n"
-        "- **Calibration (95.0% vs 95.0%)** — when the model says 95% drop-off, 95% actually do. Predictions are trustworthy.\n"
-        "- **Minority Recall (62.6%)** — out of every 10 customers who would have returned, the model correctly identifies 6.\n"
-        "- **PR AUC 3x baseline** — intervention budget is deployed 3x more efficiently than random outreach.\n"
-        "- **Model choice** — Logistic Regression selected over XGBoost (35.3% recall) and Random Forest (0% recall)."
+    st.success(
+        "🟢 **Priority 4 — Protect your Repeatable Category customers.**\n\n"
+        "These 11,006 customers show the lowest drop-off rate at 93.9% and only 1,222 need priority intervention. "
+        "They are your most naturally retainable segment. Invest in their experience "
+        "and use them as the benchmark for what good retention looks like."
     )
 
     st.divider()
@@ -160,35 +167,28 @@ with st.expander("📊 Portfolio View — Risk & Intervention Economics"):
     """)
 
     st.divider()
-    st.subheader("🧭 Strategic Advice")
-    st.markdown("Based on the data, here is where to focus first.")
+    st.subheader("🎯 Model Performance")
+    st.markdown("How reliable is the model powering this tool?")
 
-    st.error(
-        "🔴 **Priority 1 — Target Non-Repeatable Category customers immediately.**\n\n"
-        "14,736 customers flagged for priority intervention. These customers bought a one-off product "
-        "with no natural reason to return. A R$15 voucher toward a repeatable category "
-        "(health, beauty, pet supplies) is your highest-leverage move."
-    )
+    perf_col1, perf_col2, perf_col3, perf_col4 = st.columns(4)
 
-    st.warning(
-        "🟠 **Priority 2 — Fix logistics before marketing.**\n\n"
-        "Very Late Delivery customers show the highest drop-off rate at 96.1%. "
-        "No retention voucher compensates for a bad delivery experience. "
-        "Reduce delivery delays before scaling intervention spend."
-    )
+    with perf_col1:
+        st.metric("Calibration", "95.0% vs 95.0%", delta="Perfect", delta_color="off")
+    with perf_col2:
+        st.metric("PR AUC (Retained Class)", "0.0393", delta="3x random baseline", delta_color="off")
+    with perf_col3:
+        st.metric("Minority Recall", "62.6%", delta="Catches 6 in 10 returnable customers", delta_color="off")
+    with perf_col4:
+        st.metric("Training Samples", "22,416", delta="80/20 stratified split", delta_color="off")
 
-    st.info(
-        "🔵 **Priority 3 — Promote installment payments at checkout.**\n\n"
-        "Installment usage is one of the strongest retention signals in the model. "
-        "Customers who pay in installments have a higher likelihood of returning. "
-        "Make installments the default payment option, not a buried alternative."
-    )
+    st.divider()
 
-    st.success(
-        "🟢 **Priority 4 — Protect your Repeatable Category customers.**\n\n"
-        "These 11,006 customers show the lowest drop-off rate at 93.9% and only 1,222 need priority intervention. "
-        "They are your most naturally retainable segment. Invest in their experience "
-        "and use them as the benchmark for what good retention looks like."
+    st.markdown(
+        "**What these numbers mean in business terms:**\n\n"
+        "- **Calibration (95.0% vs 95.0%)** — when the model says 95% drop-off, 95% actually do. Predictions are trustworthy.\n"
+        "- **Minority Recall (62.6%)** — out of every 10 customers who would have returned, the model correctly identifies 6.\n"
+        "- **PR AUC 3x baseline** — intervention budget is deployed 3x more efficiently than random outreach.\n"
+        "- **Model choice** — Logistic Regression selected over XGBoost (35.3% recall) and Random Forest (0% recall)."
     )
 
     st.divider()
