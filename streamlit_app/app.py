@@ -6,7 +6,7 @@ import os
 
 # Page configuration
 st.set_page_config(
-    page_title="Olist Retention Predictor",
+    page_title="Olist Revenue Protection Engine",
     page_icon="🛒",
     layout="wide"
 )
@@ -52,8 +52,8 @@ except Exception as e:
 # HEADER
 # ============================================================================
 
-st.title("🛒 Olist Customer Retention Predictor")
-st.markdown("### Predict first-time customer drop-off risk")
+st.title("🛒 Olist Revenue Protection Engine")
+st.markdown("### Quantifying revenue exposure and optimising intervention spend")
 
 with st.expander("📊 Portfolio View — Risk & Intervention Economics"):
     st.header("📊 Portfolio Risk Overview")
